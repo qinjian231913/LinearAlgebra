@@ -13,9 +13,10 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
-        QJVector *vector = [[QJVector alloc] initWithArray:@[@4]];
+        QJVector *vector1 = [QJVector vectorWithArray:@[@3,@5]];
+        QJVector *vector2 = [QJVector vectorWithArray:@[@4,@9]];
 
-        NSLog(@"%@",vector);
+        NSLog(@"%@ + %@ = %@",vector1,vector2,[vector1 addVector:vector2]);
     }
     return 0;
 }
