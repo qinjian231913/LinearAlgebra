@@ -12,9 +12,6 @@
 #import "QJVector.h"
 
 @implementation QJVector
-{
-    NSMutableArray *_dimensionArr; // 向量维度数组
-}
 
 - (instancetype)initWithArray:(NSArray<NSNumber *> *)array
 {
@@ -25,6 +22,15 @@
     return self;
 }
 
+#pragma mark -
+
+- (QJVector *)addVector:(QJVector *)vector{
+    
+    return nil;
+}
+
+
+#pragma mark -
 - (NSString *)description
 {
     return [NSString stringWithFormat:@"(%@)", [self->_dimensionArr componentsJoinedByString:@","]];
