@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		2504962F23A0EF6D006E14B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2504962E23A0EF6D006E14B7 /* main.m */; };
 		2504963823A0EF9D006E14B7 /* QJVector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2504963723A0EF9D006E14B7 /* QJVector.m */; };
-		2504963C23A1E10A006E14B7 /* QJMatrix.m in Sources */ = {isa = PBXBuildFile; fileRef = 2504963B23A1E10A006E14B7 /* QJMatrix.m */; };
+		254D503523A245010057AEA1 /* QJMatrix.m in Sources */ = {isa = PBXBuildFile; fileRef = 254D503423A245010057AEA1 /* QJMatrix.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,8 +29,8 @@
 		2504962E23A0EF6D006E14B7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2504963623A0EF9D006E14B7 /* QJVector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QJVector.h; sourceTree = "<group>"; };
 		2504963723A0EF9D006E14B7 /* QJVector.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QJVector.m; sourceTree = "<group>"; };
-		2504963A23A1E10A006E14B7 /* QJMatrix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = QJMatrix.h; path = ../../../../../../Documents/QJMatrix.h; sourceTree = "<group>"; };
-		2504963B23A1E10A006E14B7 /* QJMatrix.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = QJMatrix.m; path = ../../../../../../Documents/QJMatrix.m; sourceTree = "<group>"; };
+		254D503323A245010057AEA1 /* QJMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QJMatrix.h; sourceTree = "<group>"; };
+		254D503423A245010057AEA1 /* QJMatrix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QJMatrix.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,8 +82,8 @@
 		2504963923A1E0DC006E14B7 /* Matrix */ = {
 			isa = PBXGroup;
 			children = (
-				2504963A23A1E10A006E14B7 /* QJMatrix.h */,
-				2504963B23A1E10A006E14B7 /* QJMatrix.m */,
+				254D503323A245010057AEA1 /* QJMatrix.h */,
+				254D503423A245010057AEA1 /* QJMatrix.m */,
 			);
 			path = Matrix;
 			sourceTree = "<group>";
@@ -147,7 +147,7 @@
 			files = (
 				2504962F23A0EF6D006E14B7 /* main.m in Sources */,
 				2504963823A0EF9D006E14B7 /* QJVector.m in Sources */,
-				2504963C23A1E10A006E14B7 /* QJMatrix.m in Sources */,
+				254D503523A245010057AEA1 /* QJMatrix.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
