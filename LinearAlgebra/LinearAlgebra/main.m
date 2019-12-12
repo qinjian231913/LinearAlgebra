@@ -9,14 +9,32 @@
 #import <Foundation/Foundation.h>
 
 #import "QJVector.h"
+#import "QJMatrix.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
-        QJVector *vector1 = [QJVector vectorWithArray:@[@3,@5]];
-        QJVector *vector2 = [QJVector vectorWithArray:@[@4,@9]];
 
-        NSLog(@"%@ + %@ = %@",vector1,vector2,[vector1 addVector:vector2]);
+        NSMutableArray *mArr1 = [NSMutableArray arrayWithArray:
+                                @[@[@1,@2,@4,@2],
+                                  @[@3,@4,@4,@3],
+                                  @[@3,@8,@3,@8]
+                                ]];
+        QJMatrix *matrix1 = [QJMatrix matrixWithArray:mArr1];
+        
+
+        NSMutableArray *mArr2 = [NSMutableArray arrayWithArray:
+                                @[@[@2,@2,@4,@2],
+                                  @[@3,@3,@4,@0],
+                                  @[@3,@9,@3,@8]
+                                ]];
+        QJMatrix *matrix2 = [QJMatrix matrixWithArray:mArr2];
+        
+        NSLog(@"%@",[matrix1 itemInRow:2 colum:1]);
+//        NSLog(@"%@",[matrix1 vectorInColum:3]);
+//        NSLog(@"%@+%@=%@",matrix1,matrix2,[matrix1 addMatrix:matrix2]);
+//        NSLog(@"%@-%@=%@",matrix1,matrix2,[matrix1 minusMatrix:matrix2]);
+        
     }
     return 0;
 }
