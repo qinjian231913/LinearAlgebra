@@ -7,7 +7,7 @@
 //
 
 /*
-    向量的类
+    向量的类(注意：一个向量如果没有特殊声明一般就是指列向量)
  */
 
 #import <Foundation/Foundation.h>

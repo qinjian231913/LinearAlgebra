@@ -73,6 +73,20 @@
     return [QJMatrix matrixWithArray:zeroArr];
 }
 
+// 单位矩阵
++ (QJMatrix *)unitMatrixWithCount:(NSInteger)num{
+    NSMutableArray *matArr = [NSMutableArray array];
+    for (NSInteger i = 0; i < num; i++) {
+        NSMutableArray *rowArr = [NSMutableArray array];
+        for (NSInteger j = 0; j < num; j++) {
+            [rowArr addObject:@(i==j ? 1 : 0)];
+        }
+        [matArr addObject:rowArr];
+    }
+    
+    return [QJMatrix matrixWithArray:matArr];
+}
+
 #pragma mark -
 // 矩阵行数
 - (NSInteger)rowNum{
@@ -180,6 +194,56 @@
     }
     
     return self.matrixArr[row][colum];
+}
+
+// 矩阵转置。就是指将矩阵的行和列互换，行变列，列变行，满足转置后的矩阵T' [ i ] [ j ] = T [ j ] [ i ]
+- (QJMatrix *)transposition{
+    
+    NSMutableArray *transArr = [NSMutableArray array];
+    
+    for (NSInteger i = 0; i < self.columnNum; i++) {
+        // 取出每一列放入行中
+        [transArr addObject:[[self vectorInColum:i] dimensionArr]];
+    }
+    
+    return [QJMatrix matrixWithArray:transArr];
+}
+
+
+// 矩阵和向量点乘
+- (QJVector *)dotMultiplyVector:(QJVector *)vector{
+    if (self.columnNum != vector.count) {
+        NSLog(@"矩阵的列数等于向量的元素个数才能进行点乘！");
+        return nil;
+    }
+    
+    NSMutableArray *resultVecArr = [NSMutableArray array];
+    
+    for (NSInteger i = 0; i < self.rowNum; i++) {
+        CGFloat rowMultVec = [[self vectorInRow:i] dotMultiplyVector:vector];
+        [resultVecArr addObject:@(rowMultVec)];
+    }
+    
+    return [QJVector vectorWithArray:resultVecArr];
+}
+
+// 矩阵和矩阵点乘
+- (QJMatrix *)dotMultiplyMatrix:(QJMatrix *)matrix{
+    if (self.columnNum != matrix.rowNum) {
+        NSLog(@"第一个矩阵的列数和第二个矩阵的行数相等时才能进行点乘！");
+        return nil;
+    }
+    
+    NSMutableArray *resultArr = [NSMutableArray array];
+    for (NSInteger i = 0; i < self.rowNum; i++) {
+        NSMutableArray *rowArr = [NSMutableArray array];
+        for (NSInteger j = 0; j < matrix.columnNum; j++) {
+            [rowArr addObject:@([[self vectorInRow:i] dotMultiplyVector:[matrix vectorInColum:j]])];
+        }
+        [resultArr addObject:rowArr];
+    }
+    
+    return [QJMatrix matrixWithArray:resultArr];
 }
 
 #pragma mark -
