@@ -59,6 +59,21 @@ void unitMatrixTest(){
     NSLog(@"%@",[unitM dotMultiplyMatrix:matrix2]);
 }
 
+// 交换矩阵两行测试
+void swapRowTest(){
+    NSMutableArray *mArr = [NSMutableArray arrayWithArray:
+                            @[@[@2,@3,@1,@-1],
+                              @[@1,@-1,@2,@-3],
+                              @[@5,@-2,@1,@1],
+                              @[@3,@1,@-3,@2]
+                            ]];
+    QJMatrix *matrix = [QJMatrix matrixWithArray:mArr];
+    
+    NSLog(@"%@",matrix);
+    [matrix swapRow1:1 andRow2:3];
+    NSLog(@"%@",matrix);
+}
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
@@ -83,7 +98,7 @@ int main(int argc, const char * argv[]) {
 //        NSLog(@"%@+%@=%@",matrix1,matrix2,[matrix1 addMatrix:matrix2]);
 //        NSLog(@"%@-%@=%@",matrix1,matrix2,[matrix1 minusMatrix:matrix2]);
         
-        unitMatrixTest();
+        swapRowTest();
     }
     return 0;
 }

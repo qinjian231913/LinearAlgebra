@@ -196,6 +196,19 @@
     return self.matrixArr[row][colum];
 }
 
+// 交换矩阵两行
+- (void)swapRow1:(NSInteger)row1 andRow2:(NSInteger)row2{
+    if (row1 >= self.rowNum || row2 >= self.rowNum) {
+        NSLog(@"矩阵行号越界!");
+        return;
+    }
+    
+    id temp1 = [self.matrixArr objectAtIndex:row1];
+    id temp2 = [self.matrixArr objectAtIndex:row2];
+    [self.matrixArr replaceObjectAtIndex:row1 withObject:temp2];
+    [self.matrixArr replaceObjectAtIndex:row2 withObject:temp1];
+}
+
 // 矩阵转置。就是指将矩阵的行和列互换，行变列，列变行，满足转置后的矩阵T' [ i ] [ j ] = T [ j ] [ i ]
 - (QJMatrix *)transposition{
     

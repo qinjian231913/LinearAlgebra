@@ -80,6 +80,11 @@ NS_ASSUME_NONNULL_BEGIN
 /// 矩阵转置。就是指将矩阵的行和列互换，行变列，列变行，满足转置后的矩阵T' [ i ] [ j ] = T [ j ] [ i ]
 - (QJMatrix *)transposition;
 
+/// 交换矩阵的两行
+/// @param row1 行1
+/// @param row2 行2
+- (void)swapRow1:(NSInteger)row1 andRow2:(NSInteger)row2;
+
 #pragma mark - 矩阵和向量点乘(没有特殊声明的向量都是指列向量)
 /*
  矩阵和向量点乘的结果是向量(列向量)，所以可以把矩阵理解成向量的函数，这个函数将一个向量转变成另一个向量
